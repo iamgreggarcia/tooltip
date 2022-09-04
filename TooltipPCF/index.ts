@@ -28,12 +28,12 @@ export class TooltipPCF implements ComponentFramework.ReactControl<IInputs, IOut
     public updateView(context: ComponentFramework.Context<IInputs>): React.ReactElement {
         const props: TooltipProps = {
             content: undefinedIfEmpty(context.parameters.Content),
-            //iconSize: context.parameters?.raw ?? 14,
-            iconSize: context.parameters?.IconSize.raw ?? this.defaultIconSize,
-            height: context.parameters?.Height.raw ?? this.height,
-            width: context.parameters?.Width.raw ?? this.width,
-            iconName: context.parameters?.IconName.raw ?? this.defaultIconName,
+            iconSize: undefinedIfEmpty(context.parameters.IconSize),
+            height: undefinedIfEmpty(context.parameters.Height),
+            width: undefinedIfEmpty(context.parameters.Width),
+            iconName: undefinedIfEmpty(context.parameters.IconName),
             iconColor: undefinedIfEmpty(context.parameters.IconColor),
+            fillColor: undefinedIfEmpty(context.parameters.FillColor),
             themeJSON: undefinedIfEmpty(context.parameters.Theme),
             ariaLabel: undefinedIfEmpty(context.parameters.AccessibilityLabel),
         };

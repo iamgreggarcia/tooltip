@@ -7,4 +7,5 @@ export interface TooltipProps {
     ariaLabel?: string;
     iconColor?: string;
     themeJSON?: string;
+    fillColor?: string;
 }

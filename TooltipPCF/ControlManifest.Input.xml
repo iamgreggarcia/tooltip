@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest>
-  <control namespace="zkps" constructor="TooltipPCF" version="0.0.1" display-name-key="TooltipPCF" description-key="TooltipPCF description" control-type="virtual">
+  <control namespace="zkps" constructor="TooltipPCF" version="1.0.1" display-name-key="TooltipPCF (1.0.1)" description-key="TooltipPCF description" control-type="virtual">
 
     <external-service-usage enabled="false"></external-service-usage>
 
@@ -15,7 +15,7 @@
     <property name="Width" display-name-key="Width" description-key="Width" of-type="Whole.None" usage="bound" required="false" />
     <property name="IconName" display-name-key="IconName" description-key="IconName" of-type="SingleLine.Text" usage="bound" required="false" />
     <property name="IconColor" display-name-key="IconColor" description-key="IconColor" of-type="SingleLine.Text" usage="bound" required="false" />
-
+    <property name="FillColor" display-name-key="FillColor" description-key="FillColor" of-type="SingleLine.Text" usage="input" required="false" />
     <resources>
       <code path="index.ts" order="1" />
       <platform-library name="React" version="16.8.6" />

@@ -9,10 +9,11 @@ The control accepts the following properties:
 ### Content Properties
 - **Content** - the text to display inside the tooltip. In the future, I'd like this to follow more closely to the Fluent UI tooltip usage, e.g., custom content etc. 
 - **IconName** - the Fluent UI icon to display (see [Fluent UI icons](https://developer.microsoft.com/en-us/fluentui#/styles/web/icons))
-- **IconColor** - the color to render the icon, e.g., named, rgb, or hex value
+- **IconColor** - the color to render the icon, e.g., named, rgb, or hex value. Default is 'black'
 - **Width** - the width of the control. Default value is 24
 - **Height** - the height of the control. Default value is a 24
 - **IconSize** - sets the size of the icon. Default value is 26
+- **FillColor** - the color to render background color. e.g., named, rgb, or hex value. Default is 'transparent'
 
 ### Style Properties
 - **Theme** - Accepts a JSON string that is generated using [Fluent UI Theme Designer (windows.net)](https://fabricweb.z5.web.core.windows.net/pr-deploy-site/refs/heads/master/theming-designer/). Leaving this blank will use the default theme defined by Power Apps. 

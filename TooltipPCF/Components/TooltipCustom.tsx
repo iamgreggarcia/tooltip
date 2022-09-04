@@ -12,21 +12,17 @@ import {
 import { useId } from '@fluentui/react-hooks';
 import { TooltipProps } from './Component.Types';
 
+const defaultHeight = 50;
+const defaultWidth = 50;
+const defaultIconSize = 26;
+const defaultIcon = 'Info';
+
 // Initialize icons
 initializeIcons();
 
-function getIconClass(props: Partial<TooltipProps>) {
-    const { iconSize, height, width, iconColor } = props;
-    return mergeStyles({
-        iconSize: iconSize,
-        height: height,
-        width: width,
-        color: iconColor,
-    });
-}
-
 export const TooltipCustom = React.memo((props: TooltipProps) => {
-    const { content, iconName, themeJSON, ariaLabel } = props;
+    const { content, themeJSON, ariaLabel } = props;
+    const iconName = props.iconName ?? defaultIcon;
     // Use useId() to ensure that the ID is unique on the page.
     // (It's also okay to use a plain string and manually ensure uniqueness.)
     const tooltipId = useId(`tooltip ${Math.random()}`);
@@ -57,11 +53,19 @@ export const TooltipCustom = React.memo((props: TooltipProps) => {
                 styles={hostStyles}
             >
                 <FontIcon aria-label={ariaLabel} iconName={iconName} className={getIconClass(props)} />
-
-                {/* <DefaultButton aria-describedby={tooltipId}>{props.text}</DefaultButton> */}
             </TooltipHost>
         </ThemeProvider>
     );
 });
+
+function getIconClass(props: Partial<TooltipProps>) {
+    return mergeStyles({
+        iconSize: props.iconSize ?? defaultIconSize,
+        height: props.height ?? defaultHeight,
+        width: props.width ?? defaultWidth,
+        color: props.iconColor ?? 'black',
+        backgroundColor: props.fillColor ?? 'transparent',
+    });
+}
 
 TooltipCustom.displayName = 'Tooltip';
