@@ -1,10 +1,10 @@
 export interface TooltipProps {
-  text?: string;
-  content?: string;
-  fontSize?: number;
-  height?: number;
-  width?: number;
-  margin?: string;
-  iconName?: string;
-  iconColor?: string;
+    content?: string;
+    iconSize?: number;
+    height?: number;
+    width?: number;
+    iconName?: string;
+    ariaLabel?: string;
+    iconColor?: string;
+    themeJSON?: string;
 }
